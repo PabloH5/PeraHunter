@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Shoot
   - Goblin
+  - Boss1
   layers:
   - Default
   - TransparentFX
