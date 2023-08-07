@@ -11,7 +11,7 @@ namespace Cainos.PixelArtTopDown_Basic
         public int healthNow;
         public HealtBar healtBar;
 
-        //private Animator animator;
+        //pitola 
 
         private void Start()
         {
@@ -19,10 +19,10 @@ namespace Cainos.PixelArtTopDown_Basic
             healtBar.SetMaxHealth(maxHealth);
         }
 
-
         private void Update()
         {
             Vector2 dir = Vector2.zero;
+
             if (Input.GetKey(KeyCode.A))
             {
                 dir.x = -1;
@@ -46,7 +46,9 @@ namespace Cainos.PixelArtTopDown_Basic
             GetComponent<Rigidbody2D>().velocity = speed * dir;
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+
+
+        private void OnCollisionEnter2D(Collision2D collision)
         {
 
             if (collision.gameObject.CompareTag("Enemy"))
