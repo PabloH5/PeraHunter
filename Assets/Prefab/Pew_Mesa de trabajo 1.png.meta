@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 903f61ee15fad14488e6e9e9953059d6
+guid: 833e52d268c1c3b4287891934b86b940
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goblin Idle_0
+      name: Pew_Mesa de trabajo 1_0
       rect:
         serializedVersion: 2
-        x: 58
-        y: 49
-        width: 33
-        height: 36
+        x: 86
+        y: 498
+        width: 1422
+        height: 646
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a94d6763ebdff0e45a9c96cc41a6d4cc
-      internalID: -462537327
+      spriteID: cf0c3d7d5be145346929d7c6d1573506
+      internalID: 1119389962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pew_Mesa de trabajo 1_1
+      rect:
+        serializedVersion: 2
+        x: 2107
+        y: 623
+        width: 1167
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603f1005aa00f2d4b863f69c3b1800ac
+      internalID: -1562592608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pew_Mesa de trabajo 1_2
+      rect:
+        serializedVersion: 2
+        x: 3801
+        y: 706
+        width: 1182
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e92a0f945e9334244ad5fa550f50d97b
+      internalID: 554780215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pew_Mesa de trabajo 1_3
+      rect:
+        serializedVersion: 2
+        x: 5608
+        y: 706
+        width: 1180
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec51db7271bc43d429e52de488fce461
+      internalID: -880740869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pew_Mesa de trabajo 1_4
+      rect:
+        serializedVersion: 2
+        x: 7317
+        y: 623
+        width: 1167
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b52965bc628174c802768ca84b17bb
+      internalID: 1098830322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pew_Mesa de trabajo 1_5
+      rect:
+        serializedVersion: 2
+        x: 9083
+        y: 498
+        width: 1422
+        height: 646
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c44cdd039de44240bf53042cf54ff9a
+      internalID: -1990116092
       vertices: []
       indices: 
       edges: []
@@ -141,10 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Goblin Idle_0: -462537327
-      Goblin Idle_1: 2123517121
-      Goblin Idle_2: -786198922
-      Goblin Idle_3: 1408591452
+      Pew_Mesa de trabajo 1_0: 1119389962
+      Pew_Mesa de trabajo 1_1: -1562592608
+      Pew_Mesa de trabajo 1_2: 554780215
+      Pew_Mesa de trabajo 1_3: -880740869
+      Pew_Mesa de trabajo 1_4: 1098830322
+      Pew_Mesa de trabajo 1_5: -1990116092
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

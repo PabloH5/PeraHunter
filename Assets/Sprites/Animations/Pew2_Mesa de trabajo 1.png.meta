@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 903f61ee15fad14488e6e9e9953059d6
+guid: df323280a74b3aa4b8b6bd3ceb3b9937
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goblin Idle_0
+      name: Pew2_Mesa de trabajo 1_0
       rect:
         serializedVersion: 2
-        x: 58
-        y: 49
-        width: 33
-        height: 36
+        x: 524
+        y: 56
+        width: 645
+        height: 1421
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a94d6763ebdff0e45a9c96cc41a6d4cc
-      internalID: -462537327
+      spriteID: 004880ad57dad9542ae5150b437924be
+      internalID: 1509985283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pew2_Mesa de trabajo 1_1
+      rect:
+        serializedVersion: 2
+        x: 2535
+        y: 195
+        width: 390
+        height: 1163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af76b03ac7658b8458073b735878dd37
+      internalID: -239598510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pew2_Mesa de trabajo 1_2
+      rect:
+        serializedVersion: 2
+        x: 4321
+        y: 185
+        width: 229
+        height: 1183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7615e961a3ad11d4380eecbb6dab8afe
+      internalID: 1089061088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pew2_Mesa de trabajo 1_3
+      rect:
+        serializedVersion: 2
+        x: 6040
+        y: 185
+        width: 229
+        height: 1183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90dd673fc4d6d64b95eec91cfd0d42a
+      internalID: 346245894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pew2_Mesa de trabajo 1_4
+      rect:
+        serializedVersion: 2
+        x: 7661
+        y: 195
+        width: 394
+        height: 1163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89132f639c1d9774b821203f9cab4ac9
+      internalID: 273994487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pew2_Mesa de trabajo 1_5
+      rect:
+        serializedVersion: 2
+        x: 9421
+        y: 56
+        width: 641
+        height: 1421
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a5a92bcd8cf32f449680ddafb9d2cf4
+      internalID: 2112093917
       vertices: []
       indices: 
       edges: []
@@ -141,10 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Goblin Idle_0: -462537327
-      Goblin Idle_1: 2123517121
-      Goblin Idle_2: -786198922
-      Goblin Idle_3: 1408591452
+      Pew2_Mesa de trabajo 1_0: 1509985283
+      Pew2_Mesa de trabajo 1_1: -239598510
+      Pew2_Mesa de trabajo 1_2: 1089061088
+      Pew2_Mesa de trabajo 1_3: 346245894
+      Pew2_Mesa de trabajo 1_4: 273994487
+      Pew2_Mesa de trabajo 1_5: 2112093917
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

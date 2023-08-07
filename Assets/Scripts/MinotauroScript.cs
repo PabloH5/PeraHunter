@@ -2,18 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour
+public class MinotauroScript : MonoBehaviour
 {
     public GameObject player;
 
-    public int life = 4;
+    public int life = 35;
 
     public float speed;
 
     private float distance;
 
-
-    // Update is called once per frame
     void Update()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
@@ -25,27 +23,13 @@ public class EnemyAI : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
-        // if (this.gameObject.CompareTag("Goblin"))
-        // {
-        //     life--;
-        // }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.gameObject.CompareTag("Shoot"))
         {
             life--;
-
         }
-
-        // if (collision.gameObject.CompareTag("Shoot") && this.gameObject.CompareTag("Goblin"))
-        // {
-        //     life--;
-
-        // }
-
     }
 }
