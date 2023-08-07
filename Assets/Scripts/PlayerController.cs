@@ -56,6 +56,13 @@ namespace Cainos.PixelArtTopDown_Basic
                 healthNow--;
                 healtBar.SetHealth(healthNow);
             }
+            if (collision.gameObject.CompareTag("Boss1"))
+            {
+                healthNow--;
+                healthNow--;
+                healtBar.SetHealth(healthNow);
+            }
+
 
         }
     }
