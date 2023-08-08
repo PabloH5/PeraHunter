@@ -5,13 +5,11 @@ using UnityEngine;
 public class MinotauroScript : MonoBehaviour
 {
     public GameObject player;
-
-    public int life = 35;
-
+    public int healthNow;
+    public int maxHealth = 50;
+    public HealtBar healtBar;
     public float speed;
-
     private float distance;
-
     public bool inmune = false;
 
     [SerializeField]
@@ -23,6 +21,10 @@ public class MinotauroScript : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        healthNow = maxHealth;
+        healtBar.gameObject.SetActive(true);
+        healtBar.SetMaxHealth(maxHealth);
+
     }
     void Update()
     {
@@ -36,17 +38,16 @@ public class MinotauroScript : MonoBehaviour
         {
             animator.SetBool("isAttack1", false);
         }
-        if (life <= 2)
+        if (healthNow == 25)
         {
             inmune = true;
             transform.position = Vector2.MoveTowards(transform.position, waypoint[waypointIndex].transform.position, speed * Time.deltaTime);
-            animator.SetBool("isWait", true);
+            Invoke(nameof(Wait), 3.0f);
 
             if (transform.position == waypoint[waypointIndex].transform.position)
             {
                 waypointIndex += 1;
             }
-
         }
         else
         {
@@ -54,13 +55,11 @@ public class MinotauroScript : MonoBehaviour
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
         }
 
-        if (life <= 0)
+        if (healthNow <= 0)
         {
             animator.SetBool("isDead", true);
             Invoke(nameof(Delete), 1.19f);
-
         }
-
     }
 
     private void Delete()
@@ -71,14 +70,16 @@ public class MinotauroScript : MonoBehaviour
     {
         animator.SetBool("isAttack1", true);
     }
-    // void Move(){
-    //     transform.position = Vector2.MoveTowards(transform.position, waypoint[waypointIndex].transform.position, speed * Time.deltaTime);
-    // }
+    private void Wait()
+    {
+        animator.SetBool("isWait", true);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Shoot") && inmune == false)
         {
-            life--;
+            healthNow--;
+            healtBar.SetHealth(healthNow);
         }
     }
 }

@@ -60,6 +60,8 @@ namespace Cainos.PixelArtTopDown_Basic
             {
                 healthNow--;
                 healthNow--;
+                healthNow--;
+                healthNow--;
                 healtBar.SetHealth(healthNow);
             }
 
