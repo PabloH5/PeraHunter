@@ -8,6 +8,8 @@ TagManager:
   - Shoot
   - Goblin
   - Boss1
+  - OPE
+  - Bazucaso
   layers:
   - Default
   - TransparentFX

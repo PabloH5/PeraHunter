@@ -48,12 +48,14 @@ namespace Cainos.PixelArtTopDown_Basic
 
 
 
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
 
             if (collision.gameObject.CompareTag("Enemy"))
             {
                 healthNow--;
+
                 healtBar.SetHealth(healthNow);
             }
             if (collision.gameObject.CompareTag("Boss1"))
@@ -66,6 +68,26 @@ namespace Cainos.PixelArtTopDown_Basic
             }
 
 
+
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("OPE"))
+            {
+                if (healthNow >= (maxHealth - 4))
+                {
+                    healthNow = healthNow + (maxHealth - healthNow);
+                    Debug.Log("" + healthNow);
+                    healtBar.SetHealth(healthNow);
+                }
+                else
+                {
+                    healthNow = healthNow + 5;
+                    Debug.Log("" + healthNow);
+                    healtBar.SetHealth(healthNow);
+                }
+                // healtBar.SetHealth(healthNow);
+            }
         }
     }
 }

@@ -2,28 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour
+public class SlimeLaplace : MonoBehaviour
 {
+    public int life = 8;
+    public int points = 7;
+
     public GameObject player;
     public SceneController sceneController;
+    void Start()
+    {
 
-    public int life = 4;
-    public int points = 1;
-    public float speed;
-
-    private float distance;
-
-    public int Score = 0;
-
+    }
 
     // Update is called once per frame
     void Update()
     {
-        distance = Vector2.Distance(transform.position, player.transform.position);
-        Vector2 direccion = player.transform.position - transform.position;
-
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-
         if (life <= 0)
         {
             Debug.Log(" " + sceneController.pScore(points));
@@ -36,7 +29,6 @@ public class EnemyAI : MonoBehaviour
         if (collision.gameObject.CompareTag("Shoot"))
         {
             life--;
-
         }
     }
 }

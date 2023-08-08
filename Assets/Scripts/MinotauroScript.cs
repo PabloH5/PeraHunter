@@ -29,7 +29,7 @@ public class MinotauroScript : MonoBehaviour
     void Update()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
-        Debug.Log("" + distance);
+        // Debug.Log("" + distance);
         if (distance >= 0.5 && distance <= 0.8)
         {
             Invoke(nameof(Attack1), 2.0f);
