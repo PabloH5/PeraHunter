@@ -26869,7 +26869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1400205759}
   healthNow: 0
-  maxHealth: 26
+  maxHealth: 50
   healtBar: {fileID: 724532201}
   speed: 0.3
   inmune: 0
