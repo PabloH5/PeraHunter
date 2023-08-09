@@ -19,7 +19,7 @@ public class SlimeLaplace : MonoBehaviour
     {
         if (life <= 0)
         {
-            Debug.Log(" " + sceneController.pScore(points));
+            sceneController.pScore(points);
             Destroy(this.gameObject);
         }
     }

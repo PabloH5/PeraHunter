@@ -9,9 +9,10 @@ public class Bazucaso : MonoBehaviour
     public float speed;
     [Range(1, 10)]
     [SerializeField] private float lifeTime = 2.0f;
-
+    Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -29,7 +30,15 @@ public class Bazucaso : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            Vector3 direccion = player.transform.position - transform.position;
+            rb.velocity = new Vector2(direccion.x, direccion.y).normalized * 0;
+            animator.SetBool("BUM", true);
+            Invoke(nameof(Delete), 0.25f);
         }
+    }
+
+    private void Delete()
+    {
+        Destroy(this.gameObject);
     }
 }

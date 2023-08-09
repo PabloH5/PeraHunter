@@ -135,8 +135,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  sceneController: {fileID: 0}
+  heart: {fileID: 0}
   life: 4
-  speed: 0.6
+  points: 1
+  speed: 0.8
+  Score: 0
 --- !u!95 &7262411054890108542
 Animator:
   serializedVersion: 5

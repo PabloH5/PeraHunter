@@ -6,16 +6,22 @@ public class EnemyAI : MonoBehaviour
 {
     public GameObject player;
     public SceneController sceneController;
+    [SerializeField]
+    private GameObject heart;
 
     public int life = 4;
     public int points = 1;
     public float speed;
 
     private float distance;
-
+    private float random = 0;
     public int Score = 0;
 
 
+    void Start()
+    {
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -26,7 +32,12 @@ public class EnemyAI : MonoBehaviour
 
         if (life <= 0)
         {
-            Debug.Log(" " + sceneController.pScore(points));
+            sceneController.pScore(points);
+            random = Random.Range(0.0f, 1.1f);
+            if (random >= 0.75)
+            {
+                heart = Instantiate(heart, this.transform.position, Quaternion.identity);
+            }
             Destroy(this.gameObject);
         }
     }
