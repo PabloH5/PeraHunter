@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5894186735785517279}
   - component: {fileID: 5150547260541160853}
   - component: {fileID: 7262411054890108542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skeletron
   m_TagString: Enemy
   m_Icon: {fileID: 0}

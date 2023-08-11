@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8572838427137147096}
   - component: {fileID: 2806811818562368933}
   - component: {fileID: 7221145740438546260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SlimeMelee 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.004249517, y: -0.06624647}

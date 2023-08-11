@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2060838256184646696}
   - component: {fileID: 4061125739994586699}
   - component: {fileID: 5787360237529061831}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SubditSlime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.009877372, y: -0.0012346752}
@@ -173,6 +173,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bazuca (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1944211466996163109, guid: d08f7e06a7639f344921cbdf529b5220, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3128751238348251012, guid: d08f7e06a7639f344921cbdf529b5220, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.34
@@ -213,6 +217,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4439439773380327988, guid: d08f7e06a7639f344921cbdf529b5220, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873710314143349443, guid: d08f7e06a7639f344921cbdf529b5220, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -234,6 +246,10 @@ PrefabInstance:
     - target: {fileID: 1944211466996163109, guid: d08f7e06a7639f344921cbdf529b5220, type: 3}
       propertyPath: m_Name
       value: Bazuca
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944211466996163109, guid: d08f7e06a7639f344921cbdf529b5220, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3128751238348251012, guid: d08f7e06a7639f344921cbdf529b5220, type: 3}
       propertyPath: m_LocalPosition.x
@@ -274,6 +290,14 @@ PrefabInstance:
     - target: {fileID: 3128751238348251012, guid: d08f7e06a7639f344921cbdf529b5220, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439439773380327988, guid: d08f7e06a7639f344921cbdf529b5220, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873710314143349443, guid: d08f7e06a7639f344921cbdf529b5220, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

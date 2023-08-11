@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1448192233195159981}
   - component: {fileID: 4683439258657065764}
   - component: {fileID: 5153176999162375385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bazucaso
   m_TagString: Bazucaso
   m_Icon: {fileID: 0}

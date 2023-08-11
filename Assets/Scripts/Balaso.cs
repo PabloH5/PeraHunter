@@ -15,12 +15,26 @@ public class Balaso : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, lifeTime);
     }
 
     private void FixedUpdate()
     {
         rb.velocity = transform.up * speed;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Boss1"))
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
 
 }

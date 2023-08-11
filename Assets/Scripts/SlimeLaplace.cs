@@ -30,5 +30,9 @@ public class SlimeLaplace : MonoBehaviour
         {
             life--;
         }
+        if (collision.gameObject.CompareTag("Taser"))
+        {
+            life = life - 3;
+        }
     }
 }

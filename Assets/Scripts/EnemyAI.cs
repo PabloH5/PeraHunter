@@ -49,5 +49,9 @@ public class EnemyAI : MonoBehaviour
             life--;
 
         }
+        if (collision.gameObject.CompareTag("Taser"))
+        {
+            life = life - 4;
+        }
     }
 }

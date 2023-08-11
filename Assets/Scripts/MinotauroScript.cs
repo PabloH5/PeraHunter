@@ -20,7 +20,6 @@ public class MinotauroScript : MonoBehaviour
     public GameObject subditos;
 
     int waypointIndex = 0;
-    //amimator.SetBool("isAttack", value)
     Animator animator;
     private void Awake()
     {
@@ -52,20 +51,12 @@ public class MinotauroScript : MonoBehaviour
                 {
                     healthNow = 24;
                     inmune = false;
-                    speed = 0.9999f;
+                    speed = 0.8f;
                     animator.SetBool("isWait", false);
                     animator.SetBool("isWalk", true);
                     enemySpawn.SetActive(true);
 
-                    if (distance >= 0.1 && distance <= 0.9)
-                    {
-                        // Invoke(nameof(Attack2), 1.0f);
-                        animator.SetBool("isAttack2", true);
-                    }
-                    else
-                    {
-                        animator.SetBool("isAttack2", false);
-                    }
+
                     // speed = speed * 2;
                     Vector2 direccion = player.transform.position - transform.position;
                     transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
@@ -75,13 +66,22 @@ public class MinotauroScript : MonoBehaviour
         }
         else
         {
-            if (distance >= 0.5 && distance <= 0.8 && healthNow >= 26)
+            if (distance >= 0.5 && distance <= 0.8)
             {
                 animator.SetBool("isAttack1", true);
             }
             else
             {
                 animator.SetBool("isAttack1", false);
+                if (distance >= 0.0 && distance <= 0.5)
+                {
+                    // Invoke(nameof(Attack2), 1.0f);
+                    animator.SetBool("isAttack2", true);
+                }
+                else
+                {
+                    animator.SetBool("isAttack2", false);
+                }
             }
             Vector2 direccion = player.transform.position - transform.position;
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
@@ -110,6 +110,11 @@ public class MinotauroScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Shoot") && inmune == false)
+        {
+            healthNow--;
+            healtBar.SetHealth(healthNow);
+        }
+        if (collision.gameObject.CompareTag("Taser") && inmune == false)
         {
             healthNow--;
             healtBar.SetHealth(healthNow);

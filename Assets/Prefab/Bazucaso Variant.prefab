@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bazucaso Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4056326635090998153, guid: f8aade648f219c944af85a8e47dc64eb, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4943596360066960403, guid: f8aade648f219c944af85a8e47dc64eb, type: 3}
       propertyPath: m_SortingOrder
       value: 6

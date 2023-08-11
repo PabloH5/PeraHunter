@@ -76,9 +76,17 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.06542138
       objectReference: {fileID: 0}
+    - target: {fileID: 6363921197862150827, guid: 166f6a514718bbf498d2ae6e43988863, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8310247814588894552, guid: 166f6a514718bbf498d2ae6e43988863, type: 3}
       propertyPath: m_Name
       value: BALASO Variant Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310247814588894552, guid: 166f6a514718bbf498d2ae6e43988863, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

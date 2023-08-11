@@ -10,6 +10,7 @@ TagManager:
   - Boss1
   - OPE
   - Bazucaso
+  - Taser
   layers:
   - Default
   - TransparentFX
@@ -17,9 +18,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Balaso
+  - Enemy
   - 
   - 
   - 

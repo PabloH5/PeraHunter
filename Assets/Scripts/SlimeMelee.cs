@@ -34,9 +34,9 @@ public class SlimeMelee : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Shoot"))
+        if (collision.gameObject.CompareTag("Taser"))
         {
-            life--;
+            life = life - 5;
         }
     }
 }

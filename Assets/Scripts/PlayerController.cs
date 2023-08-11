@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 20;
     public int healthNow;
     public HealtBar healtBar;
+    [SerializeField]
+    Taser taser;
+
+    // public GameObject tasersito;
     private void Start()
     {
         healthNow = maxHealth;
@@ -39,6 +43,12 @@ public class PlayerController : MonoBehaviour
         dir.Normalize();
 
         GetComponent<Rigidbody2D>().velocity = speed * dir;
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            // tasersito.SetActive(true);
+            taser.Attack2();
+        }
     }
     public int vida()
     {
@@ -62,6 +72,18 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            healthNow--;
+
+            healtBar.SetHealth(healthNow);
+        }
+
+        if (collision.gameObject.CompareTag("Boss1"))
+        {
+            healthNow = healthNow - 4;
+            healtBar.SetHealth(healthNow);
+        }
         if (collision.gameObject.CompareTag("Bazucaso"))
         {
             healthNow = healthNow - 3;
