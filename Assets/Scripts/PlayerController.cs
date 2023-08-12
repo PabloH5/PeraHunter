@@ -12,9 +12,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     Taser taser;
 
+
+    private AudioSource audioSource;
+
     // public GameObject tasersito;
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         healthNow = maxHealth;
         healtBar.SetMaxHealth(maxHealth);
     }
@@ -39,15 +43,19 @@ public class PlayerController : MonoBehaviour
         {
             dir.y = -1;
         }
-
         dir.Normalize();
-
         GetComponent<Rigidbody2D>().velocity = speed * dir;
 
         if (Input.GetMouseButtonDown(1))
         {
-            // tasersito.SetActive(true);
             taser.Attack2();
+        }
+
+        if (healthNow <= 0)
+        {
+            audioSource.Pause();
+            Destroy(this.gameObject);
+            // this.gameObject.SetActive(false);
         }
     }
     public int vida()
@@ -60,13 +68,14 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             healthNow--;
-
+            audioSource.Play();
             healtBar.SetHealth(healthNow);
         }
 
         if (collision.gameObject.CompareTag("Boss1"))
         {
             healthNow = healthNow - 4;
+            audioSource.Play();
             healtBar.SetHealth(healthNow);
         }
     }
@@ -75,19 +84,20 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             healthNow--;
-
+            audioSource.Play();
             healtBar.SetHealth(healthNow);
         }
 
         if (collision.gameObject.CompareTag("Boss1"))
         {
             healthNow = healthNow - 4;
+            audioSource.Play();
             healtBar.SetHealth(healthNow);
         }
         if (collision.gameObject.CompareTag("Bazucaso"))
         {
             healthNow = healthNow - 3;
-
+            audioSource.Play();
             healtBar.SetHealth(healthNow);
         }
         if (collision.gameObject.CompareTag("OPE"))
@@ -95,13 +105,11 @@ public class PlayerController : MonoBehaviour
             if (healthNow >= (maxHealth - 4))
             {
                 healthNow = healthNow + (maxHealth - healthNow);
-                // Debug.Log("" + healthNow);
                 healtBar.SetHealth(healthNow);
             }
             else
             {
                 healthNow = healthNow + 5;
-                // Debug.Log("" + healthNow);
                 healtBar.SetHealth(healthNow);
             }
         }

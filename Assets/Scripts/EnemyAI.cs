@@ -17,40 +17,56 @@ public class EnemyAI : MonoBehaviour
     private float random = 0;
     public int Score = 0;
 
+    private AudioSource audioSource;
 
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
+        if (player == null)
+        {
+            Destroy(this.gameObject);
+        }
     }
     // Update is called once per frame
     void Update()
     {
-        distance = Vector2.Distance(transform.position, player.transform.position);
-        Vector2 direccion = player.transform.position - transform.position;
-
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-
-        if (life <= 0)
+        if (player == null)
         {
-            sceneController.pScore(points);
-            random = Random.Range(0.0f, 1.1f);
-            if (random >= 0.75)
-            {
-                heart = Instantiate(heart, this.transform.position, Quaternion.identity);
-            }
             Destroy(this.gameObject);
         }
+        else
+        {
+            distance = Vector2.Distance(transform.position, player.transform.position);
+            Vector2 direccion = player.transform.position - transform.position;
+
+            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+
+            if (life <= 0)
+            {
+                sceneController.pScore(points);
+                random = Random.Range(0.0f, 1.1f);
+                if (random >= 0.75)
+                {
+                    heart = Instantiate(heart, this.transform.position, Quaternion.identity);
+                }
+                Destroy(this.gameObject);
+            }
+        }
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Shoot"))
         {
+            audioSource.Play();
             life--;
 
         }
         if (collision.gameObject.CompareTag("Taser"))
         {
+            audioSource.Play();
             life = life - 4;
         }
     }

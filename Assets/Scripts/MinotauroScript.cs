@@ -18,12 +18,15 @@ public class MinotauroScript : MonoBehaviour
 
 
     public GameObject subditos;
+    private AudioSource audioSource;
 
     int waypointIndex = 0;
     Animator animator;
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
+
         healthNow = maxHealth;
         healtBar.gameObject.SetActive(true);
         healtBar.SetMaxHealth(maxHealth);
@@ -33,7 +36,6 @@ public class MinotauroScript : MonoBehaviour
     void Update()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
-        // Debug.Log("" + distance);
 
         if (healthNow == 25)
         {
@@ -56,8 +58,7 @@ public class MinotauroScript : MonoBehaviour
                     animator.SetBool("isWalk", true);
                     enemySpawn.SetActive(true);
 
-
-                    // speed = speed * 2;
+                    audioSource.pitch = 1.3f;
                     Vector2 direccion = player.transform.position - transform.position;
                     transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
                 }
@@ -90,6 +91,7 @@ public class MinotauroScript : MonoBehaviour
         if (healthNow <= 0)
         {
             animator.SetBool("isDead", true);
+            SceneController.pScore(17);
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * 0);
             Invoke(nameof(Delete), 1.19f);
         }

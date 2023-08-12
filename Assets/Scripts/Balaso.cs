@@ -8,13 +8,17 @@ public class Balaso : MonoBehaviour
     [SerializeField] private float speed = 10f;
 
     [Range(1, 10)]
-    [SerializeField] private float lifeTime = 1.5f;
+    [SerializeField] private float lifeTime = 2.5f;
 
     private Rigidbody2D rb;
+    private AudioSource audioSource;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
+        Destroy(gameObject, lifeTime);
     }
 
     private void FixedUpdate()
