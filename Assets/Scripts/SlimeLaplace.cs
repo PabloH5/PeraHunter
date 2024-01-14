@@ -6,8 +6,6 @@ public class SlimeLaplace : MonoBehaviour
 {
     public int life = 8;
     public int points = 7;
-
-    public GameObject player;
     public SceneController sceneController;
     void Start()
     {
@@ -19,7 +17,7 @@ public class SlimeLaplace : MonoBehaviour
     {
         if (life <= 0)
         {
-            sceneController.pScore(points);
+            sceneController.PScore(points);
             Destroy(this.gameObject);
         }
     }
@@ -32,7 +30,7 @@ public class SlimeLaplace : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Taser"))
         {
-            life = life - 3;
+            life -= 3;
         }
     }
 }

@@ -17,18 +17,21 @@ public class SlimeMelee : MonoBehaviour
     }
     void Update()
     {
-        distance = Vector2.Distance(transform.position, player.transform.position);
-        // Debug.Log("" + distance);
-        if (distance >= 0.05 && distance <= 0.5)
+        if (player != null)
         {
-            animator.SetBool("isAttack", true);
-        }
-        else { animator.SetBool("isAttack", false); }
+            distance = Vector2.Distance(transform.position, player.transform.position);
+            // Debug.Log("" + distance);
+            if (distance >= 0.05 && distance <= 0.5)
+            {
+                animator.SetBool("isAttack", true);
+            }
+            else { animator.SetBool("isAttack", false); }
 
-        if (life <= 0)
-        {
-            sceneController.pScore(points);
-            Destroy(this.gameObject);
+            if (life <= 0)
+            {
+                sceneController.PScore(points);
+                Destroy(this.gameObject);
+            }
         }
     }
 

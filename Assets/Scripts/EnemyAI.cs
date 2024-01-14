@@ -43,7 +43,7 @@ public class EnemyAI : MonoBehaviour
 
             if (life <= 0)
             {
-                sceneController.pScore(points);
+                sceneController.PScore(points);
                 random = Random.Range(0.0f, 1.1f);
                 if (random >= 0.75)
                 {

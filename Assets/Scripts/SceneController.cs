@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-// using PlayerController.cs;
 
 public class SceneController : MonoBehaviour
 {
@@ -29,67 +28,68 @@ public class SceneController : MonoBehaviour
     }
     void Update()
     {
-        txtScore.text = "" + score;
-        if (player != null)
+        txtScore.text = "Score: " + score;
+        if (score >= 50)
         {
-            if (score >= 50)
-            {
-                minotauro.SetActive(true);
-                audioSource.Pause();
-                spawnEnemys1.SetActive(false);
-            }
-            if (score >= 113)
-            {
-                audioSource.Play();
-                ganaste.SetActive(true);
-            }
-            if (player.healthNow >= (player.maxHealth / 2) + 1)
-            {
-                bloodL.SetActive(false);
-                bloodH.SetActive(false);
+            minotauro.SetActive(true);
+            audioSource.Pause();
+            spawnEnemys1.SetActive(false);
+        }
+        if (score >= 113)
+        {
+            audioSource.Play();
+            ganaste.SetActive(true);
+            player.gameObject.SetActive(false);
+        }
 
-            }
-            if (player.healthNow <= player.maxHealth / 2 && player.healthNow >= player.maxHealth / 4)
-            {
-                bloodL.SetActive(true);
-                bloodH.SetActive(false);
-            }
-            else
-            {
-                bloodL.SetActive(false);
-                if (player.healthNow <= player.maxHealth / 4)
-                {
-                    bloodH.SetActive(true);
-                }
+        BloodActivate();
 
-            }
-            if (player.healthNow <= 0)
+        if (player.healthNow <= 0)
+        {
+            paila.SetActive(true);
+            audioSource.Pause();
+            spawnEnemys1.SetActive(false);
+        }
+
+    }
+    private void BloodActivate()
+    {
+        if (player.healthNow >= (player.maxHealth / 2) + 1)
+        {
+            bloodL.SetActive(false);
+            bloodH.SetActive(false);
+        }
+        if (player.healthNow <= player.maxHealth / 2 && player.healthNow >= player.maxHealth / 4)
+        {
+            bloodL.SetActive(true);
+            bloodH.SetActive(false);
+        }
+        else
+        {
+            bloodL.SetActive(false);
+            if (player.healthNow <= player.maxHealth / 4)
             {
-                paila.SetActive(true);
-                audioSource.Pause();
-                spawnEnemys1.SetActive(false);
+                bloodH.SetActive(true);
             }
         }
-        else { Debug.Log("Triste"); }
-
     }
     public void Blood()
     {
         bloodL.SetActive(false);
         bloodH.SetActive(false);
     }
-    public int pScore(int num)
+    public int PScore(int num)
     {
-        score = score + num;
+        score += num;
         return score;
     }
-    public int currentScore()
+    public int CurrentScore()
     {
         return score;
     }
 
-    public void reStart()
+    public void ReStart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

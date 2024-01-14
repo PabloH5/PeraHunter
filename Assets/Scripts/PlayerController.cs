@@ -10,41 +10,26 @@ public class PlayerController : MonoBehaviour
     public int healthNow;
     public HealtBar healtBar;
     [SerializeField]
-    Taser taser;
+    private Taser taser;
 
-
+    // private Vector2 movement;
     private AudioSource audioSource;
+    private Rigidbody2D rigidbody2D;
+    private Vector2 movement;
 
-    // public GameObject tasersito;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
         healthNow = maxHealth;
         healtBar.SetMaxHealth(maxHealth);
     }
     private void Update()
     {
-        Vector2 dir = Vector2.zero;
+        float inputX = Input.GetAxis("Horizontal");
+        float inputY = Input.GetAxis("Vertical");
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            dir.x = -1;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            dir.x = 1;
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            dir.y = 1;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            dir.y = -1;
-        }
-        dir.Normalize();
-        GetComponent<Rigidbody2D>().velocity = speed * dir;
+        movement = new Vector2(speed * inputX, speed * inputY);
 
         if (Input.GetMouseButtonDown(1))
         {
@@ -55,8 +40,11 @@ public class PlayerController : MonoBehaviour
         {
             audioSource.Pause();
             Destroy(this.gameObject);
-            // this.gameObject.SetActive(false);
         }
+    }
+    private void FixedUpdate()
+    {
+        rigidbody2D.velocity = movement;
     }
     public int vida()
     {
